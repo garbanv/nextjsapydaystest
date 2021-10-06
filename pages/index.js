@@ -1,10 +1,17 @@
+import React, {useEffect} from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 
 export default function Home({data}) {
-  console.log(data)
+
+
+  useEffect(()=>{
+
+  },[data])
+
+  console.log("data",data)
   return (
     <div className="container">
       <Head>
@@ -57,7 +64,7 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`http://localhost/api/sheets`)
+  const res = await fetch(`${process.env.PORT || 3000}`)
   const data = await res.json()
 console.log("data from server", data)
   if (!data) {
