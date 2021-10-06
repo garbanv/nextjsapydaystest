@@ -1,4 +1,4 @@
-const {google} = require('googleapis');
+/* const {google} = require('googleapis');
 const sheets = google.sheets('v4');
 
 
@@ -7,31 +7,23 @@ const sheetValues = []
 async function main () {
   const authClient = await authorize();
   const request = await  {
-    // The ID of the spreadsheet to retrieve data from.
-    spreadsheetId: process.env.NEXT_PUBLIC_SHEET_ID,  // TODO: Update placeholder value.
+   
+    spreadsheetId: process.env.NEXT_PUBLIC_SHEET_ID,  
 
-    // The A1 notation of the values to retrieve.
-    range: 'A2:N',  // TODO: Update placeholder value.
+    
+    range: 'A2:N',  
 
-    // How values should be represented in the output.
-    // The default render option is ValueRenderOption.FORMATTED_VALUE.
-    valueRenderOption: 'FORMATTED_VALUE',  // TODO: Update placeholder value.
+    valueRenderOption: 'FORMATTED_VALUE',
 
-    // How dates, times, and durations should be represented in the output.
-    // This is ignored if value_render_option is
-    // FORMATTED_VALUE.
-    // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-    dateTimeRenderOption: 'FORMATTED_STRING',  // TODO: Update placeholder value.
+  
+    dateTimeRenderOption: 'FORMATTED_STRING', 
 
     auth: authClient,
   };
 
   try {
     const response = (await sheets.spreadsheets.values.get(request)).data;
-    // TODO: Change code below to process the `response` object:
-/*     console.log(JSON.stringify(response, null, 2)); */
-   
-   
+
 const allData = await response.values;
 allData.forEach((value,index)=>{
     const item = {}
@@ -63,4 +55,4 @@ async function authorize() {
       sheetValues ? res.status(200).json(sheetValues) : res.json({data:"Something failed"})
       
     } 
-  }
+  } */

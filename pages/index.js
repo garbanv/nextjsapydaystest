@@ -63,7 +63,7 @@ export default function Home({data}) {
   )
 }
 
-export async function getStaticProps(context) {
+/* export async function getStaticProps(context) {
   const res = await fetch(`http://musing-banach-1aeaf7.netlify.app/api/sheets`)
   const data = await res.json()
 console.log("data from server", data)
@@ -76,4 +76,4 @@ console.log("data from server", data)
   return {
     props: { data }
   }
-}
+} */
