@@ -57,7 +57,7 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`http://localhost:3000/api/sheets`)
+  const res = await fetch(`http://localhost/api/sheets`)
   const data = await res.json()
 console.log("data from server", data)
   if (!data) {
