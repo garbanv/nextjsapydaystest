@@ -14,3 +14,26 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.container {
+  max-width: 95%;
+  margin:0 auto;
+}
+.homeCards {
+
+  display: flex;
+   flex-wrap: wrap;
+  justify-content:start;
+
+}
+
+.card {
+  width:70px;
+  height:70px;
+  padding:0 2px 2px 0;
+}
+
+img {
+  max-width:100%;
+}
