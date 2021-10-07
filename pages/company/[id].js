@@ -55,7 +55,7 @@ export default function CompanyDetails({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`http://localhost:3000/api/companies`);
+  const res = await fetch(`https://nextjsapydaystest-3fkvistej-garbanv.vercel.app/companies`);
   const data = await res.json();
 
   if (!data) {
