@@ -95,6 +95,9 @@ export default function Home({ data }) {
     return company.parentCategorySlug==="API Lifecycle Platform" && company.subcategory=== "API Developer Portals"
   })  */
 
+
+  
+
   const b1 =  data.values.filter((company,index)=>company.parentCategorySlug==="Business processes as an API/API-as a Product" && company.subcategory==="Messaging APIs/Cpass" && company.logo !==null)
   const b2 =  data.values.filter((company,index)=>company.parentCategorySlug==="Business processes as an API/API-as a Product" && company.subcategory==="E-mail APIs" && company.logo !==null)
 
@@ -516,7 +519,7 @@ useEffect(() => {
 }
 
 export async function getServerSideProps(context) {
-   const res = await fetch(`https://musing-banach-1aeaf7.netlify.app/api/sheets`);
+   const res = await fetch(`hhttps://apidaysapp.vercel.app/api/sheets`);
    /* const res = await fetch(`http://localhost:3000/api/sheets`); */
   const data = await res.json();
 
