@@ -523,8 +523,8 @@ useEffect(() => {
 
 export async function getServerSideProps(context) {
    /* const res = await fetch(`https://apidaysapp.vercel.app/api/sheets`); */
-  /* const res = await fetch(`https://platformableapidays.herokuapp.com/`); */
-  const res = await fetch(`http://localhost:5000`)
+  const res = await fetch(`https://platformableapidays.herokuapp.com/`);
+  /* const res = await fetch(`http://localhost:5000`) */
   const data = await res.json();
 
   if (!data) {
