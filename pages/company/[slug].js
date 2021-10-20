@@ -5,15 +5,15 @@ import Image from "next/image";
 import Loader from "../../public/loader.gif";
 import { CompanyContext } from "../../context/CompanyContext";
 
-export default function CompanyDetails({ data }) {
+export default function CompanyDetailsName({ data }) {
   const router = useRouter();
-  const { id } = router.query;
+  const { slug } = router.query;
 
   const [company,setCompany]=useContext(CompanyContext)
 
   console.log("company",company)
 
-  const selectedCompany = data.values.filter((company) => company.id === parseInt(id));
+  const selectedCompany = data.values.filter((company) => company.name === slug);
   const {
     name,
     logo,
@@ -61,7 +61,8 @@ export default function CompanyDetails({ data }) {
 
 export async function getServerSideProps(context) {
   /* const res = await fetch(`https://apidaysapp.vercel.app//api/sheets`); */
-  const res = await fetch(`https://platformableapidays.herokuapp.com/`);
+  /* const res = await fetch(`https://platformableapidays.herokuapp.com/`); */
+  const res = await fetch(`http://localhost:5000`)
   const data = await res.json();
 
   if (!data) {

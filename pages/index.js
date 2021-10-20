@@ -17,7 +17,7 @@ export default function Home({ data }) {
 
   const handleCompany = (company) => {
     setCompany(company);
-    router.push(`/company/${company.id}`);
+    router.push(`/company/${company.name}`);
   };
 
 
@@ -107,8 +107,9 @@ export default function Home({ data }) {
 
   async function getBusinessANDMessaginApis(arr){
   const data = await arr.values.filter((company,index)=>company.parentCategorySlug==="Business processes as an API/API-as a Product" && company.subcategory==="Messaging APIs/Cpass" && company.logo !==null)
-  let cleandata = [...new Set(data)];
-  setBusinessANDMessaginApis(cleandata)
+  /* let cleandata = [...new Set(data)]; */
+  setBusinessANDMessaginApis(data)
+  console.log("cleandata1",data)
 }
 
 async function getBusinessANDKYC(arr){
@@ -123,8 +124,10 @@ const isInitialMount = useRef(true);
 
 useEffect(() => {
   if (isInitialMount.current) {
-    setBusinessANDMessaginApis(cleanB1)
-    setBusinessANDKYC(cleanB2)
+    /* setBusinessANDMessaginApis(b1)
+    setBusinessANDKYC(b2) */
+    getBusinessANDMessaginApis(data)
+    getBusinessANDKYC(data)
      isInitialMount.current = false;
     
   } else {
@@ -164,7 +167,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Messaging APIs/Cpass</h3>
                         <div className="homeCards">
-                          {businessANDMessaginAPis?businessANDMessaginAPis.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -181,7 +184,7 @@ useEffect(() => {
                              
                               </div>
                             );
-                          }):null}
+                          }):"no data"}
                         </div>
                       </div>
                     </div>
@@ -190,7 +193,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Online Forms</h3>
                         <div className="homeCards">
-                          {b1?b1.slice(0, 10).map((row, index) => {
+                          {b2?b2.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -217,7 +220,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Open Banking APIs</h3>
                         <div className="homeCards">
-                          {b1?b1.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -252,7 +255,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Payment APIs</h3>
                         <div className="homeCards">
-                          {businessANDMessaginAPis?businessANDMessaginAPis.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -278,7 +281,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Search Engine APIs</h3>
                         <div className="homeCards">
-                          {b1?b1.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -305,7 +308,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Accounting APIs</h3>
                         <div className="homeCards">
-                          {b1?b1.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -344,7 +347,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Data (B2B, B2C)</h3>
                         <div className="homeCards">
-                          {businessANDMessaginAPis?businessANDMessaginAPis.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -370,7 +373,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Automation/Orchestration APIs</h3>
                         <div className="homeCards">
-                          {b1?b1.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -397,7 +400,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Insurance-as-a-service</h3>
                         <div className="homeCards">
-                          {b1?b1.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -432,7 +435,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Messaging APIs/Cpass</h3>
                         <div className="homeCards">
-                          {businessANDMessaginAPis?businessANDMessaginAPis.slice(0, 10).map((row, index) => {
+                          {b1?b1.slice(0, 10).map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -458,7 +461,7 @@ useEffect(() => {
                       <div className="box bg-white border py-2 px-2 col">
                         <h3 className="landscape-subcategory-title text-center mb-3">Messaging APIs/Cpass</h3>
                         <div className="homeCards">
-                          {b1?b1.slice(0, 10).map((row, index) => {
+                          {b1?b1.map((row, index) => {
                             return (
                               <div
                                 href="https://nextjs.org/docs"
@@ -520,7 +523,8 @@ useEffect(() => {
 
 export async function getServerSideProps(context) {
    /* const res = await fetch(`https://apidaysapp.vercel.app/api/sheets`); */
-  const res = await fetch(`https://platformableapidays.herokuapp.com/`);
+  /* const res = await fetch(`https://platformableapidays.herokuapp.com/`); */
+  const res = await fetch(`http://localhost:5000`)
   const data = await res.json();
 
   if (!data) {
