@@ -60,9 +60,9 @@ export default function CompanyDetails({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const res= await fetch('http://localhost:3000/api/sheets')
-/*   const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/1IpiS6OF9vMLuUaPprUV5U1hQYpyKnK2zYzeihvNW42I/values/Hoja 1!A2:BD?key=AIzaSyDon4gsym2mED06ix3xjfSoApV6bMY0oUI`);
- */  const data = await res.json();
+  const res = await fetch(`https://musing-banach-1aeaf7.netlify.app/api/sheets`);
+ /*  const res = await fetch(`http://localhost:3000/api/sheets`); */
+  const data = await res.json();
 
   if (!data) {
     return {

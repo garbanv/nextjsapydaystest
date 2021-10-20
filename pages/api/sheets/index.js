@@ -1,35 +1,3 @@
-/* const { google } = require("googleapis");
-const sheets = google.sheets("v4");
-
-
-const all = {}
-const values = [
-  {
-    name:"Alexei",
-    married:true
-  },
-  {
-    name:"Maria",
-    married:true
-  }
-];
-
-export default async function handler(req, res) {
-
-  if (req.method === "GET") {
-   res.status(200).json(all)
-    
-  }
-
-}
-
-
-const categories = ["banks","fintechs","internationals"]
-
-all.categories=categories
-all.values=values
- */
-
 const { google } = require("googleapis");
 const sheets = google.sheets("v4");
 
@@ -50,7 +18,7 @@ export default async function handler(req, res) {
 async function main() {
   const authClient = await authorize();
   const request = await {
-    spreadsheetId: "1IvzyhR0la17Qd40Lm91Nh1IxaKOb9_9I_mJsQDi4a4Q",
+    spreadsheetId: process.env.NEXT_PUBLIC_SHEET_ID,
     range: "Sheet1!A2:BA",
     valueRenderOption: "FORMATTED_VALUE",
     dateTimeRenderOption: "FORMATTED_STRING",
@@ -135,32 +103,6 @@ async function main() {
   }
 }
 
-async function categories() {
-  const authClient = await authorize();
-  const request = await {
-    spreadsheetId: process.env.NEXT_PUBLIC_SHEET_ID,
-    range: "Hoja 2!A2",
-    valueRenderOption: "FORMATTED_VALUE",
-    dateTimeRenderOption: "FORMATTED_STRING",
-    auth: authClient,
-  };
-
-  try {
-    const response = (await sheets.spreadsheets.values.get(request)).data;
-
-    const allData =  response.values;
-   sheetValues.length === 0 ? allData.forEach((company, index) => {
-      const item = {};
-        item.id=index
-        
-    
-
-      sheetValues.push(item);
-    }): null
-  } catch (err) {
-    console.error(err);
-  }
-}
 
 
 async function authorize() {

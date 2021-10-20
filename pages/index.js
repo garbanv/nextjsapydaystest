@@ -507,13 +507,8 @@ useEffect(() => {
                
                 </div>
               </div>
-
-
-              
             </div>
           </section>
-
-    
         </main>
       </div>
     </Layout>
@@ -521,10 +516,9 @@ useEffect(() => {
 }
 
 export async function getServerSideProps(context) {
-   const res = await fetch(`https://apidaysapp.vercel.app/api/sheets`);
-  /* const res = await fetch("http://localhost:3000/api/sheets"); */
+   const res = await fetch(`https://musing-banach-1aeaf7.netlify.app/api/sheets`);
+   /* const res = await fetch(`http://localhost:3000/api/sheets`); */
   const data = await res.json();
-
 
   if (!data) {
     return {
