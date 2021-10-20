@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.css';
+import { CompanyProvider } from '../context/CompanyContext';
 
 function MyApp({ Component, pageProps }) {
 
@@ -8,7 +9,11 @@ function MyApp({ Component, pageProps }) {
     import("bootstrap/dist/js/bootstrap");
 }, []);
 
-  return <Component {...pageProps} />
+  return <>
+  <CompanyProvider>
+  <Component {...pageProps} />
+  </CompanyProvider>
+  </>
 }
 
 export default MyApp

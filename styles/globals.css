@@ -4,44 +4,52 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color:#105a75;
 }
-
-
 
 * {
   box-sizing: border-box;
-}
-
-
-.homeCards {
-
-  display: flex;
-   flex-wrap: wrap;
-  justify-content:start;
-
-}
-iframe {
-  max-width:100%;
-}
-.card {
-  width:76px;
-  height:76px;
-  padding:0 2px 2px 0;
 }
 
 img {
   max-width:100%;
 }
 
+.homeCards {
+  display: flex;
+   flex-wrap: wrap;
+  justify-content:space-between;
+
+}
+iframe {
+  max-width:100%;
+}
+.landscape-card {
+/*   background-color:red; */
+  width:32px;
+  height:32x;
+  padding:0 2px 2px 0;
+}
+
+a {
+  text-decoration: none !important;
+  color:#333 !important;
+  margin-left:10px;
+}
+
 .heroBg {
   background-color:#04a5b6;
 }
 
+
+.bg-home-keyindicator {
+  background-color:#f28f22;
+}
 .navbar img{
 max-width: 125px;
 }
 .sm-text {
-  font-size:8px;
+  font-size:12px;
 }
 
 .videoWrapper div {
@@ -56,4 +64,65 @@ max-width: 125px;
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.landscape-card:hover {
+  cursor:pointer;
+}
+
+/* LANDSCAPE */
+
+.bg-landscape-box {
+  background-color:#eee;
+}
+.category-name span {
+    text-align:center;
+    font-size:10px;
+    writing-mode: tb-rl; 
+    transform: rotate(180deg);
+    text-align:center;
+    background-color:#eee;
+    padding:0 5px;
+
+  
+
+  }
+
+
+.landscape-subcategory-title {
+  font-size:12px;
+}
+
+.category-name {
+/*   border-top:20px solid white;
+  border-bottom:20px solid white; */
+}
+.block-space {
+  width:10px;
+  background-color:#eee;
+}
+.bg-primary2 {
+  background-color:#105a75;
+  color:white;
+}
+
+.test {
+/*   border-top:15px solid white;
+  border-bottom:15px solid white; */
+  width:30px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+    background-color:#eee;
+}
+
+
+.heroBg {
+  background-image: url('../public/homepage/apidays_home___HERO\ BACKGROUND.png');
+  background-size:cover;
 }

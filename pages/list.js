@@ -521,8 +521,8 @@ useEffect(() => {
 }
 
 export async function getServerSideProps(context) {
-   const res = await fetch(`https://nextjsapydaystest-3fkvistej-garbanv.vercel.app/api/sheets`);
-  /* const res = await fetch("http://localhost:3000/api/sheets"); */
+  /*  const res = await fetch(`https://nextjsapydaystest-3fkvistej-garbanv.vercel.app/api/companies`); */
+  const res = await fetch("http://localhost:3000/api/sheets");
   const data = await res.json();
 
 

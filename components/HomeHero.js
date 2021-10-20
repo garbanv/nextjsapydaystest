@@ -3,13 +3,41 @@ import React from 'react'
 export default function HomeHero() {
     return (
         <div class="px-4 py-5  text-center">
-        <img class="d-block mx-auto mb-4" src="https://dummyimage.com/400x400/000/fff&text=Logo" alt="" width="72" height="57"/>
-        <h1 class="display-5 fw-bold text-white">Welcome to Apidays landscape</h1>
-        <div class="col-lg-6 mx-auto">
-          <p class=" mb-4 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eos corporis optio vero, id harum quibusdam aspernatur labore possimus explicabo expedita, consequatur accusantium illum inventore veniam molestias tenetur ea ad.</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-dark btn-lg px-4 gap-3">Will do something</button>
-         {/*    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button> */}
+        <h1 class="display-5 fw-bold text-white">Hello,</h1>
+        <h1 class="display-5 fw-bold text-white">Welcome to</h1>
+        <h3 className="text-center bg-home-keyindicator d-inline-block px-5 py-3 text-white">APIDAYS LANDSCAPE</h3>
+        <p className="text-center text-white">KEY INDICATORS</p>
+        <div className="text-center my-3"><img src="../homepage/zig_zag line.png" alt="" width="125px"/></div>
+       
+
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3"></div>
+            <div className="col-md-6">
+              <div className="row">
+              <div className="col">
+                <img src="../homepage/apidays_home___OVERALL FUNDING.png" alt="" />
+                <p className="text-white sm-text my-2 px-2">OVERALL FUNDING</p>
+              </div>
+              <div className="col">
+              <img src="../homepage/apidays_home___NEW FEATURES.png" alt="" />
+                <p className="text-white sm-text my-2 px-2">NEW <br /> FEATURES</p>
+              </div>
+              <div className="col">
+              <img src="../homepage/apidays_home___INDUSTRY SPECIFIC SOLUTIONS.png" alt="" />
+                <p className="text-white sm-text my-2 px-2">INDUSTRY SPECIFIC SOLUTION</p>
+              </div>
+              <div className="col">
+              <img src="../homepage/apidays_home___SECURITY INCIDENTS.png" alt="" />
+                <p className="text-white sm-text my-2 px-2">SECURITY INCIDENTS</p>
+              </div>
+              <div className="col">
+              <img src="../homepage/apidays_home___REVENUE BY CATEGORY.png" alt="" />
+                <p className="text-white sm-text my-2 px-2">REVENUE BY CATEGORY</p>
+              </div>
+              </div>
+            </div>
+            <div className="col-md-3"></div>
           </div>
         </div>
       </div>

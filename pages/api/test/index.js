@@ -1,7 +1,42 @@
+/* const { google } = require("googleapis");
+const sheets = google.sheets("v4");
+
+
+const all = {}
+const values = [
+  {
+    name:"Alexei",
+    married:true
+  },
+  {
+    name:"Maria",
+    married:true
+  }
+];
+
+export default async function handler(req, res) {
+
+  if (req.method === "GET") {
+   res.status(200).json(all)
+    
+  }
+
+}
+
+
+const categories = ["banks","fintechs","internationals"]
+
+all.categories=categories
+all.values=values
+ */
+
 const { google } = require("googleapis");
 const sheets = google.sheets("v4");
 
-const sheetValues = [];
+const sheetValues = {
+  values:[],
+  categories:[]
+};
 
 export default async function handler(req, res) {
    await main();
@@ -26,7 +61,7 @@ async function main() {
     const response = (await sheets.spreadsheets.values.get(request)).data;
 
     const allData =  response.values;
-   sheetValues.length === 0 ? allData.forEach((company, index) => {
+   allData.forEach((company, index) => {
       const item = {};
         item.id=index
         item.name=company[0]
@@ -83,8 +118,8 @@ async function main() {
         item.valuationAtIpo=company[51] || null
     
 
-      sheetValues.push(item);
-    }): null
+      sheetValues.values.push(item);
+    })
   } catch (err) {
     console.error(err);
   }
@@ -125,3 +160,5 @@ async function authorize() {
   }
   return authClient;
 }
+
+
