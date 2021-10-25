@@ -4,7 +4,7 @@ export default function CompanyCard({company,index}) {
 
 
     return (
-        <div className="company-card shadow rounded my-5" key={index}>
+        <div className="company-card shadow rounded" key={index}>
         <div className="card-top">
             <div className="card-logo">
               <img src={company.logo} alt="" />

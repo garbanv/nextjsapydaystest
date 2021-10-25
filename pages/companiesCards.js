@@ -14,7 +14,7 @@ export default function companiesCards({data}) {
 
 
 
-        <section className="cards">
+        <section className="cards my-5">
             <div className="container">
                 <div className="card-container">
                     {filteredData?filteredData.map((company,index)=>{
