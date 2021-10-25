@@ -12,8 +12,6 @@ export default function companiesCards({data}) {
         <Layout>
         <section className="filter"></section>
 
-
-
         <section className="cards my-5">
             <div className="container">
                 <div className="card-container">

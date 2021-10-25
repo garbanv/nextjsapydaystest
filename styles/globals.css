@@ -210,8 +210,13 @@ h3 {
   grid-template-columns: 1fr 1fr;
    grid-column-gap:5px;
   place-items:center;
-   flex:1 ;
+   min-height:135px !important;
+
 }
+
+.card-top img {
+  max-width:100px;
+  }
 
 .card-middle {
   flex:1 ;

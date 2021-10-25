@@ -1,13 +1,15 @@
 import React from 'react'
 
+
 export default function CompanyCard({company,index}) {
 
 
     return (
         <div className="company-card shadow rounded" key={index}>
         <div className="card-top">
+  
             <div className="card-logo">
-              <img src={company.logo} alt="" />
+              <img src={`${company.logo.includes("https://drive.google") ? "../apidaysReplacementLogo.png":company.logo}`} alt="" />
             </div>
             <div className="card-description">
               <h6 className="fw-bold"> {company.name}</h6>
@@ -47,7 +49,7 @@ export default function CompanyCard({company,index}) {
           </div>{/*  <!--card-bottom -left--> */}
           <div className="card-bottom-center">
              <span>Total Funding</span>
-            <p className="fw-bold sm-text">${company.totalFunding? company.totalFunding : "BsF.1MM"}</p>
+            <p className="fw-bold sm-text">${company.totalFunding? company.totalFunding : "undefined"}</p>
             <img src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/512/users-icon.png" alt="" class="icon"/>
           </div> {/* <!--card-bottom -center--> */}
           <div className="card-bottom-right">
