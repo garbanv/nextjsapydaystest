@@ -15,6 +15,8 @@ export default function Header() {
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" href="/">Home</Link>
+          <Link className="nav-link active" aria-current="page" href="/homepage">Homepage</Link>
+          <Link className="nav-link active" aria-current="page" href="/companiesCards">Companies Card</Link>
         </li>
        {/*  <li className="nav-item">
           <Link className="nav-link" href="/list">List</Link>
