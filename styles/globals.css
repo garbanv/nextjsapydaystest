@@ -4,14 +4,46 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
+ background-color: #f0f0f0 !important;
 }
-
+a {
+  color:var(--main-blue);
+}
 * {
   box-sizing: border-box;
 }
+:root {
+  --main-blue:#319ef9;
+  --text-gray:#aaa;
+  --lightpink:#fef1de;
+  --lightblue:lavender;
+  --lightgreen:#ddfeee;
+  --lightyellow:#fefddd;
+  --yellow:#f8c700;
+  --pink:#f8c700;
+  --turquoise:#28c8dd;
+  --darkturquoise:darkturquoise;
 
+}
+
+.bg-lightpink {
+  background-color: var(--lightpink);
+}
+.bg-lightblue {
+  background-color: var(--lightblue);
+}
+.bg-lightgreen {
+  background-color: var(--lightgreen);
+}
+
+.bg-lightyellow {
+  background-color: var(--lightyellow);
+}
 img {
   max-width:100%;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering:optimizeQuality;
 }
 
 .homeCards {
@@ -23,11 +55,19 @@ iframe {
   max-width:100%;
 }
 
+.icon {
+  max-width: 30px;
+}
+
 
 a {
   text-decoration: none !important;
   color:#333 !important;
   margin-left:10px;
+}
+
+.text-gray {
+  color:var(--text-gray);
 }
 
 .heroBg {
@@ -220,8 +260,13 @@ h3 {
 
 .card-middle {
   flex:1 ;
+  min-height:150px;
+  /* REVIEW min height */
 }
+  
+  .card-bottom {
 
+  }
 
 .card-top span {
   font-size:12px;
@@ -231,8 +276,14 @@ h3 {
   max-width:20px;
   margin:5px 0
 }
+
+.card-bottom {
+  min-height:110px;
+  /* REVIEW min height */
+}
 .card-bottom p{
   margin:0;
+
 }
 .card-bottom-left,.card-bottom-center,.card-bottom-right {
   padding:5px;
@@ -287,3 +338,88 @@ h3 {
 .card-bottom-left,.card-bottom-center {
  border-right:1px solid #eee; 
 }
+
+
+/* PROFILE PAGE */
+.company-profile-container {
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:10px;
+  }
+
+  .company-profile-left-column {
+  /*   background-color:blue; */
+    }
+    
+    .company-profile-right-column {
+/*     background-color:blue; */
+    }
+
+    .company-url a {
+      color: var(--main-blue) !important;
+    }
+    .company-category h3 {
+      background-color:#eee;
+      font-size: 12px;
+    }
+
+    .company-subcategory h3 {
+      
+      font-size: 12px;
+    }
+
+    .founded-top-left {
+      display:flex;
+      flex:1;
+      }
+      
+      
+      .foundedIn-text {
+      margin-left:10px;
+      }
+
+      .map-headquarter img{
+        position:relative;
+        top:-8px;
+        }
+        .company-social-logo img{
+          max-width:50px;
+          }
+.company-social-url-link  a{
+  color: var(--main-blue) !important;
+}
+
+
+.company-profile-right-one-top {
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  }
+
+  .md-icon {
+    max-width: 50px;
+  }
+
+  .sd-icon {
+max-width: 60px;
+  }
+
+  .xd-icon {
+    max-width: 80px;
+      }
+.known-industries {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content-addressing-url  a{
+  color: var(--main-blue) !important;
+}
+
+.company-profile-right-side-section5 {
+  display:grid;
+  grid-template-columns:1fr 3fr;
+  }
+
+  .company-card:hover {
+    cursor:pointer;
+    }
