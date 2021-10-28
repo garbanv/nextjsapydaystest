@@ -319,7 +319,7 @@ export default function CompanyDetailsName({ data }) {
 
                <p className="text-gray m-0 px-2 sm-text">Diversity Spotlight (US only)</p>
                  {nonWhitePeopleInManagement?<h5 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h5>:<Unknown/>}
-                 <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="" className="md-icon my-1 px-2" />
+                 <img src="../../apilandscape_diversity_spot_80x50.png" alt="" className="xd-icon my-1 px-2" />
 
               </div>
 
