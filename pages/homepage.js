@@ -548,6 +548,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           </section>
           
           <section className="home-landscape">
+          <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
             <div className="container-fluid">
               <div className="row">
                 <div className="col-md-12 mb-1">

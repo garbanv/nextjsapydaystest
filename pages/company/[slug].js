@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Loader from "../../public/loader.gif";
 import { CompanyContext } from "../../context/CompanyContext";
-
+import Unknown from "../../components/Unknown";
 export default function CompanyDetailsName({ data }) {
   const router = useRouter();
   const { slug } = router.query;
@@ -50,7 +50,8 @@ export default function CompanyDetailsName({ data }) {
     acquisitionType,
     ipoDate,
     moneyRaisedAtIpo,
-    valuationAtIpo
+    valuationAtIpo,
+    industryGroups
   } = selectedCompany[0];
 
 /*   const top5InvestorsArray = top5Investors.split(",")
@@ -62,7 +63,7 @@ export default function CompanyDetailsName({ data }) {
        <div className="company-profile-container bg-light">
          <div className="company-profile-left-column bg-white   p-5">
            <div className="company-name">
-             <h3 className="p-0 m-0 fw-bold">
+             <h3 className="p-0 m-0 mb-5 fw-bold">
              {name}
              </h3>
              </div> {/* company name */}
@@ -160,22 +161,28 @@ export default function CompanyDetailsName({ data }) {
 
            <section className="company-profile-right-one bg-white ">
 
-            <div className="testx">
-            <div className="div me-3 pb-2 ">
+           <div className="profile-right-side-top-top border-end border-bottom d-flex pt-2 px-2 ">
+                   <div className="me-3 pb-2 ">
                    <p className="text-gray sm-text">Known industries <br />
                  working in</p>
                      <img src="../../apilandscape__known industries working in_80x50.png" alt="" className="md-icon"/>
 
                    </div> {/* div */}
 
-                   <div className="div known-industries   align-items-center">
-                     <p className="bg-lightpink text-center px-2 py-1 me-1 d-block ">Banking</p>
-                     <p className="bg-lightblue text-center px-2 py-1 me-1 d-block ">FInancial services</p>
-                     <p className="bg-lightgreen text-center px-2 py-1 me-1 d-block ">Fintech</p>
-                     <p className="bg-lightyellow text-center px-2 py-1 me- d-block ">Payments</p>
+                   <div className="">
+                     {industryGroups? industryGroups.split(",").map((industry,index)=>{
+                       return (
+                         <>
+                         <span class="badge bg-secondary me-1">{industry}</span>
+                         </>
+                       )
+                     }):"Unknown"}
+                   
+                
 
                    </div> {/* div known-industries*/}
-            </div>
+                  
+                </div>{/* profile-right-side-top-top */}
 
 
              <div className="company-profile-right-one-top">
@@ -185,7 +192,7 @@ export default function CompanyDetailsName({ data }) {
                  <p className="text-gray sm-text">Estimated <br />
                  Revenue Range</p>
 
-                 <h3 className="fw-bold fs-4 text-center mt-5">{estimatedRevenueRange}</h3>
+                 <h3 className="fw-bold fs-4 text-center mt-5">{estimatedRevenueRange?estimatedRevenueRange:<h6 className="text-center ">Unknown</h6>}</h3>
 
                  <img src="../money-line.png" alt="" />
 
@@ -193,44 +200,29 @@ export default function CompanyDetailsName({ data }) {
 
                <div className="company-profile-right-one-top-right">
 
-                 <div className="profile-right-side-top-top  d-flex pt-2 px-2 ">
-                   <div className="div me-3 pb-2 ">
-                   <p className="text-gray sm-text">Known industries <br />
-                 working in</p>
-                     <img src="../../apilandscape__known industries working in_80x50.png" alt="" className="md-icon"/>
-
-                   </div> {/* div */}
-
-                   <div className="div known-industries   align-items-center">
-                     <p className="bg-lightpink text-center px-2 py-1 me-1 d-block ">Banking</p>
-                     <p className="bg-lightblue text-center px-2 py-1 me-1 d-block ">FInancial services</p>
-                     <p className="bg-lightgreen text-center px-2 py-1 me-1 d-block ">Fintech</p>
-                     <p className="bg-lightyellow text-center px-2 py-1 me- d-block ">Payments</p>
-
-                   </div> {/* div known-industries*/}
-                  
-                </div>{/* profile-right-side-top-top */}
-                 <div className="profile-right-side-top-bottom content-addressing border-top border-bottom d-flex">
+              
+                 <div className="profile-right-side-top-bottom content-addressing  d-flex">
 
                    <div className="content-addressing-left-side px-2 pt-1">
                    <p className="text-gray sm-text">Content addressing</p>
-                      <div className="content-addressing-box d-flex gap-3 align-content-start">
+                      <div className="content-addressing-box d-flex gap-3 align-content-start my-2">
                         <div className="content-addresing-box-icon">
-                          <img src="../../apilandscape__financial services_45x45.png" alt="" className="icon" />
+                          <img src="../../apilandscape__financial services_45x45.png" alt="" className="sd-icon" />
                         </div>
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">financial services</p>
-                          <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a>
+                          {/* <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a> */}
+                          <p className="text-gray xs-text" >Uknown</p>
                         </div>
                       </div> {/* content addressing box */}
 
-                      <div className="content-addressing-box d-flex gap-3 align-content-start">
+                      <div className="content-addressing-box d-flex gap-3 align-content-start my-2">
                         <div className="content-addresing-box-icon">
-                          <img src="../../apilandscape__health sector_45x45.png" alt="" className="icon" />
+                          <img src="../../apilandscape__health sector_45x45.png" alt="" className="sd-icon" />
                         </div>
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">Health Sector</p>
-                          <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a>
+                          <p className="text-gray xs-text" >Uknown</p>
                         </div>
                       </div> {/* content addressing box */}
 
@@ -238,23 +230,24 @@ export default function CompanyDetailsName({ data }) {
 
                    <div className="content-addressing-left-side px-2 pt-1">
                    <p className="text-gray"><br /></p>
-                      <div className="content-addressing-box d-flex gap-3 align-content-start">
+                      <div className="content-addressing-box d-flex gap-3 align-content-start my-2">
                         <div className="content-addresing-box-icon">
-                          <img src="../../apilandscape__sustainability_45x45.png" alt="" className="icon" />
+                          <img src="../../apilandscape__sustainability_45x45.png" alt="" className="sd-icon" />
                         </div>
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">Sustainability</p>
-                          <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a>
+                         {/*  <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a> */}
+                         <p className="text-gray xs-text" >Uknown</p>
                         </div>
                       </div> {/* content addressing box */}
 
-                      <div className="content-addressing-box d-flex gap-3 align-content-start">
+                      <div className="content-addressing-box d-flex gap-3 align-content-start my-2">
                         <div className="content-addresing-box-icon">
-                          <img src="../../apilandscape__government_45x45.png" alt="" className="icon" />
+                          <img src="../../apilandscape__government_45x45.png" alt="" className="sd-icon" />
                         </div>
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">Government</p>
-                          <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a>
+                          <p className="text-gray xs-text" >Uknown</p>
                         </div>
                       </div> {/* content addressing box */}
 
@@ -272,7 +265,8 @@ export default function CompanyDetailsName({ data }) {
 
                <div className="number-of-customers d-flex flex-column align-items-center border-top border-end">
                  <p className="text-gray m-0 px-2 sm-text">Number of Customers</p>
-                 <h3 className="fw-bold my-2 px-2">{numbersOfCustomers ? numbersOfCustomers : "Unknow"}</h3>
+
+                 {numbersOfCustomers ?<h5 className="fw-bold px-2 pt-2"> {numbersOfCustomers} </h5>:<h6 className="fw-bold my-2 px-2"> Unknown </h6>}
                  <img src="../../apilandscape__number_of_customers_50x60.png" alt="" className="md-icon my-1 px-2" />
 
                </div> {/* number-of-customer */}
@@ -285,23 +279,19 @@ export default function CompanyDetailsName({ data }) {
                 </div>
                
                <div className="known-partnership-logo d-flex flex-wrap ">
-                     <p className="bg-lightpink text-center px-2 py-1 me-1 d-block ">Logo</p>
-                     <p className="bg-lightblue text-center px-2 py-1 me-1 d-block ">Logo</p>
-                     <p className="bg-lightgreen text-center px-2 py-1 me-1 d-block ">Logo</p>
-                     <p className="bg-lightyellow text-center px-2 py-1 me- d-block ">Logo</p>
+            
                      </div> {/* known-partnership-logo */}
                    </div> {/* div known-partnership*/}
 
-               <div className="know-partnerships-non-api  flex-grow-1">
+               <div className="know-partnerships-non-api  flex-grow-1 border-top">
                
                <div className="known-partnership-container d-flex ">
                 <img src="../../apilandscape__known_partnerships_no_API_45x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                 <p className="text-gray m-0 px-2 sm-text">Known partnerships <br />(Non-API industry)</p>
                 </div>
                <div className="known-partnership-logo d-flex flex-wrap flex-grow-1">
-               <span class="badge bg-secondary m-1">Royale Oceaninc Super Yatchs</span>
-               <span class="badge bg-secondary m-1">Royale Oceaninc Super Yatchs</span>
-               <span class="badge bg-secondary m-1">Royale Oceaninc Super Yatchs</span>
+               {/* <span class="badge bg-secondary m-1">Royale Oceaninc Super Yatchs</span> */}
+             
                      </div> {/* known-partnership-logo */}
 
                </div> {/* know-partnerships non api*/}
@@ -319,7 +309,7 @@ export default function CompanyDetailsName({ data }) {
              <div className="company-profile-right-side-section2-left headcount d-flex flex-column align-items-center border-end flex-grow-1">
 
                 <p className="text-gray m-0 px-2 sm-text ">Headcount</p>
-                 <h3 className="fw-bold my-2 px-2">{headcount}</h3>
+                 {headcount?<h5 className="fw-bold my-2 px-2">{headcount}</h5>:<h6 className="fw-bold my-2 px-2"> Unknown </h6>}
                  <img src="../../apilandscape_headcount_80x50_companies card.png" alt="" className="xd-icon my-1 px-2" />
 
              </div> {/* company-profile-right-side-section2 left */}
@@ -328,7 +318,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="d-flex flex-column align-items-center flex-grow-1">
 
                <p className="text-gray m-0 px-2 sm-text">Diversity Spotlight (US only)</p>
-                 <h3 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h3>
+                 {nonWhitePeopleInManagement?<h3 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h3>:<Unknown/>}
                  <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="" className="md-icon my-1 px-2" />
 
               </div>
@@ -336,7 +326,7 @@ export default function CompanyDetailsName({ data }) {
               <div className="d-flex flex-column align-items-center flex-grow-1">
 
               <p className="text-gray m-0 px-2 sm-text">Women in management?</p>
-                <h3 className="fw-bold my-2 px-2">{womanInManagement}</h3>
+              {womanInManagement? <h5 className="fw-bold my-2 px-2">{womanInManagement}</h5>:<Unknown/>}
                 <img src="../../apilandscape__women_in_management_50x55.png" alt="" className="sd-icon my-1 px-2" />
 
               </div>
@@ -345,7 +335,7 @@ export default function CompanyDetailsName({ data }) {
               <div className="d-flex flex-column align-items-center flex-grow-1">
 
               <p className="text-gray m-0 px-2 sm-text">Diverse management?</p>
-                <h3 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h3>
+              {nonWhitePeopleInManagement? <h3 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h3>:<Unknown/>}
                 <img src="../../apilandscape__diverse_management_50x55.png" alt="" className="sd-icon my-1 px-2" />
 
               </div>
@@ -355,7 +345,7 @@ export default function CompanyDetailsName({ data }) {
              <div className="company-profile-right-side-section2-right vacant d-flex flex-column align-items-center  flex-grow-1">
 
              <p className="text-gray m-0 px-2 sm-text">Positions vacant Q4 2021</p>
-                 <h3 className="fw-bold my-2 px-2">{numberOfPositionsVacantInPastYear}</h3>
+             {numberOfPositionsVacantInPastYear?<h5 className="fw-bold my-2 px-2">{numberOfPositionsVacantInPastYear}</h5>:<Unknown/>}
                  <img src="../../apilandscape__positions_vacant_50x55.png" alt="" className="sd-icon my-1 px-2" />
 
              </div> {/* company-profile-right-side-section2 right*/}
@@ -374,7 +364,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                  <h3 className="text-center">{totalNumberOfNewProducFeaturesInLastYear?totalNumberOfNewProducFeaturesInLastYear:"Unknown"}</h3>
+                  {totalNumberOfNewProducFeaturesInLastYear? <h5 className="text-center">{totalNumberOfNewProducFeaturesInLastYear}</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -388,7 +378,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                        <h3 className="text-center">{totalProductsActive}</h3>
+                      {totalProductsActive ? <h3 className="text-center">{totalProductsActive}</h3>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -403,7 +393,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                  <h3 className="text-center">{patentsGranted?patentsGranted:"unknown"}</h3>
+                  {patentsGranted?<h5 className="text-center">patentsGranted</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -418,7 +408,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                  <h3 className="text-center">{acquisitions?acquisitions:"unknown"}</h3>
+                  {acquisitions?<h5 className="text-center">{acquisitions}</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -434,8 +424,8 @@ export default function CompanyDetailsName({ data }) {
                   <p className="text-gray m-0 px-2 sm-text">Known standard used/integrated</p>
                   </div> {/* features-top */}
 
-                  <h6 className="m-0 p-0">Data</h6>
-                  <h6>Data</h6>
+               {/*    <h6 className="m-0 p-0">Data</h6>
+                  <h6>Data</h6> */}
 
                </div> {/* section3 bottom left */}
 
@@ -446,9 +436,9 @@ export default function CompanyDetailsName({ data }) {
                   <p className="text-gray m-0 px-2 sm-text">Privacy specific features included</p>
                   </div> {/* features-top */}
 
+                 {/*  <h6>Data</h6>
                   <h6>Data</h6>
-                  <h6>Data</h6>
-                  <h6>Data</h6>
+                  <h6>Data</h6> */}
 
                </div> {/* section3 bottom right */}
 
@@ -499,7 +489,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                  <h3 className="text-center">{activeTechCount? activeTechCount: "Unknown"}</h3>
+                  {activeTechCount? <h5 className="text-center">{activeTechCount}</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -513,7 +503,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                        <h3 className="text-center">{itSpend? itSpend:"Unknow"}</h3>
+                  {itSpend? <h5 className="text-center"> {itSpend}</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -528,7 +518,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                  <h3 className="text-center">{privacyBreaches?privacyBreaches: "Unknown"}</h3>
+                  {privacyBreaches?<h5 className="text-center">{privacyBreaches}</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -551,7 +541,7 @@ export default function CompanyDetailsName({ data }) {
 
            <div className="px-2">
              
-           <p>{top5Investors?top5Investors:<h3 className="text-center my-5">No Investors</h3>}</p>
+           <p className="sm-text mt-2">{top5Investors?top5Investors:<h6 className="text-center my-5">No Investors</h6>}</p>
            
            </div>
 
@@ -576,7 +566,7 @@ export default function CompanyDetailsName({ data }) {
 
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Total Funding</p>
-               <h6><span className="badge  text-black">${totalFunding}</span></h6>
+                 {totalFunding?<h6><span className="badge  text-black">{totalFunding}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_total_funding__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -594,7 +584,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Lead Investor</p>
-               <h6><span className="badge  text-black">{numberLeadOfLeadInvestors?numberLeadOfLeadInvestors : "Unknown"}</span></h6>
+               <h5><span className="badge  text-black">{numberLeadOfLeadInvestors?numberLeadOfLeadInvestors : "Unknown"}</span></h5>
                <img src="../../apilandscape_lead_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -605,7 +595,7 @@ export default function CompanyDetailsName({ data }) {
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Investors </p>
                  <p></p>
-               <h6><span className="badge text-black ">{numberOfInvestors?numberOfInvestors: "Unknown"}</span></h6>
+               <h5><span className="badge text-black ">{numberOfInvestors?numberOfInvestors: "Unknown"}</span></h5>
                <img src="../../apilandscape_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -638,7 +628,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end border-top p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">IPO <br /> Date</p>
-               <h6><span className="badge  text-black">{ipoDate?ipoDate:"D01/5/2019"}</span></h6>
+               <h6><span className="badge  text-black">{ipoDate?ipoDate:"Unknown"}</span></h6>
                <img src="../../apilandscape_IPO_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                

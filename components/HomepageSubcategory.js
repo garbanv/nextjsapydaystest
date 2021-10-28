@@ -8,7 +8,7 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
       <div className="homeCards px-2">
         {filteredCategory
           ? filteredCategory.map((row, index) => {
-            console.log("row.logo",index +'-'+row.logo)
+          /*   console.log("row.logo",index +'-'+row.logo) */
               return (
                 <div
                   href="https://nextjs.org/docs"

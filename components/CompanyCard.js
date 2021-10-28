@@ -14,7 +14,7 @@ export default function CompanyCard({company,index}) {
         <div className="card-top">
   
             <div className="card-logo">
-              <img src={`${company.logo.includes("https://drive.google") ? "../apidaysReplacementLogo.png":company.logo}`} alt="" onClick={() => handleCompany(company)}/>
+              <img src={`${company.logo}`} alt="" onClick={() => handleCompany(company)}/>
             </div>
             <div className="card-description">
               <h6 className="fw-bold" onClick={() => handleCompany(company)}> {company.name}</h6>
