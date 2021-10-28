@@ -601,7 +601,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <h3 className="text-white text-center py-5 m-0">A comprehensive view of all stakeholders creating the programmable economy</h3>
           </div>
           </section>
-          
+          <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
           <section className="home-landscape">
             <div className="container-fluid">
               <div className="row">

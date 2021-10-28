@@ -318,7 +318,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="d-flex flex-column align-items-center flex-grow-1">
 
                <p className="text-gray m-0 px-2 sm-text">Diversity Spotlight (US only)</p>
-                 {nonWhitePeopleInManagement?<h3 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h3>:<Unknown/>}
+                 {nonWhitePeopleInManagement?<h5 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h5>:<Unknown/>}
                  <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="" className="md-icon my-1 px-2" />
 
               </div>
@@ -335,7 +335,7 @@ export default function CompanyDetailsName({ data }) {
               <div className="d-flex flex-column align-items-center flex-grow-1">
 
               <p className="text-gray m-0 px-2 sm-text">Diverse management?</p>
-              {nonWhitePeopleInManagement? <h3 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h3>:<Unknown/>}
+              {nonWhitePeopleInManagement? <h5 className="fw-bold my-2 px-2">{nonWhitePeopleInManagement}</h5>:<Unknown/>}
                 <img src="../../apilandscape__diverse_management_50x55.png" alt="" className="sd-icon my-1 px-2" />
 
               </div>
@@ -557,7 +557,7 @@ export default function CompanyDetailsName({ data }) {
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Stage (Seed, A, B, C)</p>
                <h6><span className="badge bg-lightgreen text-black">{stage? stage:"Unknown"}</span></h6>
-               <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="" className="md-icon my-1 px-2 align-self-center" />
+              
                  </div>
                
                </div> {/* section5 box */}

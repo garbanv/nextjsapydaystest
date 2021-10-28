@@ -15,9 +15,9 @@ export default function LandscapeSubcategory({handleCompany,subcategoryName,filt
                   key={index}
                 >
                   <div onClick={() => handleCompany(row)} data-tip={row.name}>
-                    <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
+                    
                     <img src={row.logo} alt="" />
-                    <p className="xs-text text-center">{row.name}</p>
+                    <p className="xs-text">{row.name}</p>
                   </div>
                 </div>
               );
