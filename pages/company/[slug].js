@@ -160,6 +160,24 @@ export default function CompanyDetailsName({ data }) {
 
            <section className="company-profile-right-one bg-white ">
 
+            <div className="testx">
+            <div className="div me-3 pb-2 ">
+                   <p className="text-gray sm-text">Known industries <br />
+                 working in</p>
+                     <img src="../../apilandscape__known industries working in_80x50.png" alt="" className="md-icon"/>
+
+                   </div> {/* div */}
+
+                   <div className="div known-industries   align-items-center">
+                     <p className="bg-lightpink text-center px-2 py-1 me-1 d-block ">Banking</p>
+                     <p className="bg-lightblue text-center px-2 py-1 me-1 d-block ">FInancial services</p>
+                     <p className="bg-lightgreen text-center px-2 py-1 me-1 d-block ">Fintech</p>
+                     <p className="bg-lightyellow text-center px-2 py-1 me- d-block ">Payments</p>
+
+                   </div> {/* div known-industries*/}
+            </div>
+
+
              <div className="company-profile-right-one-top">
 
                <div className="company-profile-right-one-top-left    p-2 border-end">
@@ -528,10 +546,12 @@ export default function CompanyDetailsName({ data }) {
            <div className="new-product-features-top d-flex">
            <img src="../../apilandscape_top_5_investors__60x45.png" alt="" className="xd-icon my-1 px-2 align-self-center" />
                   <p className="text-gray m-0 px-2 sm-text">Top 5 Investors</p>
+                  <p></p>
                   </div> {/* features-top */}
 
            <div className="px-2">
-           <p>{top5Investors}</p>
+             
+           <p>{top5Investors?top5Investors:<h3 className="text-center my-5">No Investors</h3>}</p>
            
            </div>
 
@@ -546,7 +566,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Stage (Seed, A, B, C)</p>
-               <h6><span className="badge bg-lightgreen text-black">{stage}</span></h6>
+               <h6><span className="badge bg-lightgreen text-black">{stage? stage:"Unknown"}</span></h6>
                <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -565,7 +585,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Last funding date</p>
-               <h6><span className="badge  text-black">{lastFundingDate}</span></h6>
+               <h6><span className="badge  text-black">{lastFundingDate?lastFundingDate:"Unknown"}</span></h6>
                <img src="../../apilandscape_last_funding_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -583,8 +603,9 @@ export default function CompanyDetailsName({ data }) {
 
                <div className="section5-box flex-grow-1">
                  <div className="box-container d-flex flex-column align-items-center">
-                 <p className="text-gray m-0 px-2 sm-text">Investors</p>
-               <h6><span className="badge text-black">{numberOfInvestors?numberOfInvestors: "Unknown"}</span></h6>
+                 <p className="text-gray m-0 px-2 sm-text">Investors </p>
+                 <p></p>
+               <h6><span className="badge text-black ">{numberOfInvestors?numberOfInvestors: "Unknown"}</span></h6>
                <img src="../../apilandscape_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                

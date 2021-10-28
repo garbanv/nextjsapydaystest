@@ -9,7 +9,8 @@ export default function companiesCards({data}) {
 
 
     const filteredData = data.values.filter((company,index)=> company.logo !==null)
-    console.log("filteredData",filteredData) 
+    const newData = data.values;
+    console.log("filteredData length",filteredData.length)
     return (
         <Layout>
         <section className="filter"></section>

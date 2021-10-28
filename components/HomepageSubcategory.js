@@ -8,6 +8,7 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
       <div className="homeCards px-2">
         {filteredCategory
           ? filteredCategory.map((row, index) => {
+    
               return (
                 <div
                   href="https://nextjs.org/docs"
@@ -16,7 +17,7 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
                 >
                   <div onClick={() => handleCompany(row)} data-tip={row.name}>
                     <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
-                    <img src={row.logo} alt="" />
+                   {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png":company.logo}`} alt="" /> : <img src={row.logo} alt="" /> }      
                     {/* <p className="xs-text text-center">{row.name}</p> */}
                   </div>
                 </div>

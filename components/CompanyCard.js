@@ -48,13 +48,13 @@ export default function CompanyCard({company,index}) {
         <div className="card-bottom">
           <div className="card-bottom-left">
             <span className="sm-text">Headcount</span>
-            <p className="fw-bold">{company.headcount}</p>
-            <img src="https://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/512/users-icon.png" alt="" class="icon" />
+            <p className="fw-bold">{company.headcount?company.headcount:"Unknown"}</p>
+            <img src="../apilandscape_headcount_80x50_companies card.png" alt="" class="sd-icon mt-3" />
             
           </div>{/*  <!--card-bottom -left--> */}
           <div className="card-bottom-center">
              <span>Total Funding</span>
-            <p className="fw-bold ">${company.totalFunding? company.totalFunding : "undefined"}</p>
+            <p className="fw-bold ">${company.totalFunding? company.totalFunding : "Unknown"}</p>
             <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
           </div> {/* <!--card-bottom -center--> */}
           <div className="card-bottom-right">
