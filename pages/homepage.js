@@ -1144,7 +1144,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
 
 export async function getServerSideProps(context) {
 
-  const res = await fetch(`http://localhost:5000`);
+  const res = await fetch(`https://apidaysserver-svmwd.ondigitalocean.app` || `http://localhost:5000`);
   const data = await res.json();
 
   if (!data) {
