@@ -47,12 +47,7 @@ export default function CompanyDetails({ data }) {
             <p>{description}</p>
             <h3 className="fw-black text-center fw-bold">{name}</h3>
           </div>
-        {/*   <div className="col-md-6 videoWrapper">
-          <div  dangerouslySetInnerHTML={{ __html: chart1 }}></div>
-          </div>
-          <div className="col-md-6 videoWrapper" >
-          <div  dangerouslySetInnerHTML={{ __html: chart2 }}></div>
-          </div> */}
+     
         </div>
       </div>
     </Layout>
