@@ -365,11 +365,18 @@ const BusinessprocessesasanAPIAPIasaProductANDVideo = data.values.filter(
 );
 
 const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce = data.values.filter(
-  (company, index) =>
+  (company, index) => {
+    return (
     company.parentCategorySlug ===
       "Business processes as an API/API-as a Product" &&
-    company.subcategory.split(",").includes("Headless E-commerce APIs") 
+    company.subcategory.includes("Headless E-commerce APIs") 
+    )
+  }
 );
+
+const prueba = data.values.filter((company,index)=>{
+  return company.parentCategorySlug.includes("Business processes as an API/API-as a Product") && company.subcategory.includes("Headless E-commerce APIs")
+})
 
 
 
@@ -393,7 +400,7 @@ const BusinessprocessesasanAPIAPIasaProductsANDAIAPIs = data.values.filter(
 );
 
 const BusinessprocessesasanAPIAPIasaProductsANDAPIAggregators = data.values.filter(
-  (company, index) =>
+  (company, index) => 
     company.parentCategorySlug ===
       "Business processes as an API/API-as a Products" &&
     company.subcategory === "API Aggregators" 
@@ -541,7 +548,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           <section className="hero heroBg">
             <HomeHero />
           </section>
-
+{console.log("prueba",prueba)}
           <section className="intro-text">
           <div className="container ">
             <h3 className="text-white text-center py-5 m-0">A comprehensive view of all stakeholders creating the programmable economy</h3>

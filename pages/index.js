@@ -372,6 +372,10 @@ const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce = data.values.fi
 );
 
 
+const prueba = data.values.filter((company,index)=>{
+  return company.parentCategorySlug.includes("Business processes as an API/API-as a Product") && company.subcategory.includes("Headless E-commerce APIs")
+})
+
 
 /*   Business processes as an API/API-as a Products */
   
@@ -909,7 +913,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <HomepageSubcategory 
                           subcategoryName="Headless E-commerce APIs"
                           handleCompany={handleCompany}
-                          filteredCategory={BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce}
+                          filteredCategory={prueba}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
