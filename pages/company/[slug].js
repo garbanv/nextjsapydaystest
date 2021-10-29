@@ -575,7 +575,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Last funding date</p>
-               <h6><span className="badge  text-black">{lastFundingDate?lastFundingDate:"Unknown"}</span></h6>
+                 {lastFundingDate?   <h6><span className="badge  text-black">{lastFundingDate}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_last_funding_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -584,7 +584,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Lead Investor</p>
-               <h5><span className="badge  text-black">{numberLeadOfLeadInvestors?numberLeadOfLeadInvestors : "Unknown"}</span></h5>
+                 {numberLeadOfLeadInvestors? <h6><span className="badge  text-black">{numberLeadOfLeadInvestors}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_lead_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -595,7 +595,7 @@ export default function CompanyDetailsName({ data }) {
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Investors </p>
                  <p></p>
-               <h5><span className="badge text-black ">{numberOfInvestors?numberOfInvestors: "Unknown"}</span></h5>
+                 {numberOfInvestors?<h6><span className="badge text-black ">{numberOfInvestors}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_investors__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -609,7 +609,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end border-top p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text text-center">Acquisition Price</p>
-               <h6><span className="badge  text-black">{acquisitionPrice?acquisitionPrice:"Unknown"}</span></h6>
+                 {acquisitionPrice? <h6><span className="badge  text-black">{acquisitionPrice}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_acquisition_price__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -619,7 +619,7 @@ export default function CompanyDetailsName({ data }) {
 
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text text-center">Acquisition Type</p>
-               <h6><span className="badge text-black">{acquisitionType?acquisitionType:"Unknown"}</span></h6>
+                 {acquisitionType?  <h6><span className="badge text-black">{acquisitionType}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_acquisition_type__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -628,7 +628,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end border-top p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">IPO <br /> Date</p>
-               <h6><span className="badge  text-black">{ipoDate?ipoDate:"Unknown"}</span></h6>
+                 {ipoDate?<h6><span className="badge  text-black">{ipoDate}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_IPO_date__60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -637,7 +637,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-end border-top p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text text-center">Money Raised at IPO</p>
-               <h6><span className="badge  text-black">{moneyRaisedAtIpo?moneyRaisedAtIpo:"Unknown"}</span></h6>
+                 {moneyRaisedAtIpo?<h6><span className="badge  text-black">{moneyRaisedAtIpo}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_money_raised_at_IPO_60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                
@@ -647,7 +647,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="section5-box flex-grow-1 border-top p-2">
                  <div className="box-container d-flex flex-column align-items-center">
                  <p className="text-gray m-0 px-2 sm-text">Valuation at IPO</p>
-               <h6><span className="badge text-black">{valuationAtIpo?valuationAtIpo:"Unknown"}</span></h6>
+                 {valuationAtIpo? <h6><span className="badge text-black">{valuationAtIpo}</span></h6>:<Unknown/>}
                <img src="../../apilandscape_valuation_at_IPO_60x45.png" alt="" className="md-icon my-1 px-2 align-self-center" />
                  </div>
                

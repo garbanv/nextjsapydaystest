@@ -262,8 +262,18 @@ h3 {
 
 .card-middle {
   flex:1 ;
-  min-height:150px;
+  min-height:40px;
   /* REVIEW min height */
+}
+
+.card-middle-tag {
+  background-color: whitesmoke;
+  padding:5px 10px;
+  text-align: center;
+  font-size:10px;
+  width: 100%;
+  display:block;
+  border-radius:10px;
 }
   
   .card-bottom {
