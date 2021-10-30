@@ -212,7 +212,7 @@ export default function CompanyDetailsName({ data }) {
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">financial services</p>
                           {/* <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a> */}
-                          <p className="text-gray xs-text" >Uknown</p>
+                          <p className="text-gray xs-text" >-</p>
                         </div>
                       </div> {/* content addressing box */}
 
@@ -222,7 +222,7 @@ export default function CompanyDetailsName({ data }) {
                         </div>
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">Health Sector</p>
-                          <p className="text-gray xs-text" >Uknown</p>
+                          <p className="text-gray xs-text" >-</p>
                         </div>
                       </div> {/* content addressing box */}
 
@@ -237,7 +237,7 @@ export default function CompanyDetailsName({ data }) {
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">Sustainability</p>
                          {/*  <a href="" className="m-0 p-0 xs-text">http://www.bnkbl.com/financialservices</a> */}
-                         <p className="text-gray xs-text" >Uknown</p>
+                         <p className="text-gray xs-text" >-</p>
                         </div>
                       </div> {/* content addressing box */}
 
@@ -247,7 +247,7 @@ export default function CompanyDetailsName({ data }) {
                         </div>
                         <div className="content-addressing-url">
                           <p className="text-gray sm-text m-0">Government</p>
-                          <p className="text-gray xs-text" >Uknown</p>
+                          <p className="text-gray xs-text" >-</p>
                         </div>
                       </div> {/* content addressing box */}
 
@@ -378,7 +378,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                      {totalProductsActive ? <h3 className="text-center">{totalProductsActive}</h3>:<Unknown/>}
+                      {totalProductsActive ? <h5 className="text-center">{totalProductsActive}</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
@@ -393,7 +393,7 @@ export default function CompanyDetailsName({ data }) {
                   </div> {/* features-top */}
 
                   <div className="new-product-features-bottom">
-                  {patentsGranted?<h5 className="text-center">patentsGranted</h5>:<Unknown/>}
+                  {patentsGranted?<h5 className="text-center">{patentsGranted}</h5>:<Unknown/>}
                   </div> {/* features-top */}
 
 
