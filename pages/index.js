@@ -94,6 +94,12 @@ export default function Homepage({ data }) {
   ];
 
 
+  const APILifecyclePlatform = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug.includes(
+        "API Lifecycle Platform")
+  );
+
    const  APILifecyclePlatformANDAccessLevelandIdentityManagement =  data.values.filter(
     (company, index) =>
       company.parentCategorySlug.includes(
@@ -174,6 +180,12 @@ export default function Homepage({ data }) {
 
   /* API Standards and Protocols */
 
+  const ApiStandardsandProtocols = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug.includes(
+        "API Standards and Protocols")
+  );
+
   const ApiStandardsandProtocolsANDAsyncAPI = data.values.filter(
     (company, index) =>
       company.parentCategorySlug.includes(
@@ -233,21 +245,26 @@ export default function Homepage({ data }) {
 
   /* Backend Building Tools/MBaaS */
 
+  const BackendBuildingToolsMBaaS = data.values.filter(
+    (company, index) =>
+      company.parentCategorySlug.includes(
+        "Backend Building Tools/MBaaS")
+  );
 
-const ApiStandardsandProtocolsANDBlockchainAPIs = data.values.filter(
+const BackendBuildingToolsMBaaSANDBlockchainAPIs = data.values.filter(
     (company, index) =>
       company.parentCategorySlug.includes(
         "Backend Building Tools/MBaaS") &&
       company.subcategory.includes("Blockchain APIs")
   );
-  const ApiStandardsandProtocolsANDInfrastructureCloudServerlessAPIs = data.values.filter(
+  const BackendBuildingToolsMBaaSANDInfrastructureCloudServerlessAPIs = data.values.filter(
     (company, index) =>
       company.parentCategorySlug.includes(
         "Backend Building Tools/MBaaS") &&
       company.subcategory.includes("Infrastructure/Cloud/Serverless APIs")
   );
   
-  const ApiStandardsandProtocolsANDMBaas = data.values.filter(
+  const BackendBuildingToolsANDMBaas = data.values.filter(
     (company, index) =>
       company.parentCategorySlug.includes(
         "Backend Building Tools/MBaaS") &&
@@ -256,7 +273,11 @@ const ApiStandardsandProtocolsANDBlockchainAPIs = data.values.filter(
 
 /*   Business processes as an API/API-as a Product */
   
-
+const BusinessprocessesasanAPIAPIasaProduct = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug.includes(
+      "Business processes as an API/API-as a Product")
+);
 
 const BusinessprocessesasanAPIAPIasaProductANDDataManagementAPIs = data.values.filter(
   (company, index) =>
@@ -379,6 +400,11 @@ const BusinessprocessesasanAPIAPIasaProductANDHeadlessEcommerce = data.values.fi
 
 /*   Business processes as an API/API-as a Products */
   
+const BusinessprocessesasanAPIAPIasaProducts= data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug.includes(
+      "Business processes as an API/API-as a Products")
+);
 
 
 const BusinessprocessesasanAPIAPIasaProductsANDAccountingAPIs = data.values.filter(
@@ -421,7 +447,11 @@ const BusinessprocessesasanAPIAPIasaProductsANDDataB2 = data.values.filter(
 
 
 /* Integration Platform as a service */
-
+const IntegrationPlatformAsAService = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug.includes(
+      "Integration Platform as a Service")
+);
 
 const IntegrationPlatformAsAServiceANDAutomationOrchestrationAPIs = data.values.filter(
   (company, index) =>
@@ -465,6 +495,12 @@ const IntegrationPlatformAsAServiceANDHorizontalAPIAbstractions = data.values.fi
 );
 
 /* Vertical API Abstractions */
+
+const VerticalAPIAbstractions = data.values.filter(
+  (company, index) =>
+    company.parentCategorySlug.includes(
+      "Vertical API Abstractions")
+);
 
 const VerticalAPIAbstractionsANDCloudStorageAPI = data.values.filter(
   (company, index) =>
@@ -541,9 +577,9 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
         </Head>
 
         <main>
-          <section className="hero heroBg">
+         {/*  <section className="hero heroBg">
             <HomeHero />
-          </section>
+          </section> */}
 
           <section className="intro-text">
           <div className="container ">
@@ -553,12 +589,12 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
           
           <section className="home-landscape">
           <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
-            <div className="container-fluid">
+            <div className="container">
               <div className="row">
                 <div className="col-md-12 mb-1">
                   <div class="home-main-container ">
                     <div class="title">
-                      <span>API Lifecycle <br/>Platform</span>
+                      <span>API Lifecycle <br/>Platform ({APILifecyclePlatform.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -665,7 +701,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="title">
-                      <span>API Standards <br/>  and Protocols</span>
+                      <span>API Standards <br/>  and Protocols({ApiStandardsandProtocols.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -748,7 +784,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="title">
-                      <span>Backend Building <br /> Tools/MBaaS</span>
+                      <span>Backend Building <br /> Tools/MBaaS ({BackendBuildingToolsMBaaS.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -758,21 +794,21 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           <HomepageSubcategory 
                           subcategoryName="Blockchain APIs"
                           handleCompany={handleCompany}
-                          filteredCategory={ ApiStandardsandProtocolsANDBlockchainAPIs}
+                          filteredCategory={ BackendBuildingToolsMBaaSANDBlockchainAPIs}
                           />
                           </div>
                           <div class="landscape-subcategory-box">
                           <HomepageSubcategory 
                           subcategoryName="Infrastructure/Cloud/Serverless APIs"
                           handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDInfrastructureCloudServerlessAPIs}
+                          filteredCategory={BackendBuildingToolsMBaaSANDInfrastructureCloudServerlessAPIs}
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
                           <HomepageSubcategory 
                           subcategoryName="MBaas"
                           handleCompany={handleCompany}
-                          filteredCategory={ApiStandardsandProtocolsANDMBaas}
+                          filteredCategory={BackendBuildingToolsANDMBaas}
                           />
                           </div>
                         </div>
@@ -786,7 +822,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="title">
-                      <span>Business processes as an <br /> API/API-as a Product</span>
+                      <span>Business processes as an <br /> API/API-as a Product ({BusinessprocessesasanAPIAPIasaProduct.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -936,7 +972,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="title">
-                      <span>Business processes as an <br /> API/API-as a Products</span>
+                      <span>Business processes as an <br /> API/API-as a Products ({BusinessprocessesasanAPIAPIasaProducts.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -995,7 +1031,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="title">
-                      <span>Integration Platform as a Service</span>
+                      <span>Integration Platform as a Service ({IntegrationPlatformAsAService.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">
@@ -1066,7 +1102,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                 <div className="col-md-12 my-1">
                   <div class="home-main-container ">
                     <div class="title">
-                      <span>Vertical API Abstractions</span>
+                      <span>Vertical API Abstractions ({VerticalAPIAbstractions.length})</span>
                     </div>
                     <div class="category-container ">
                       <div class="landscape-container">

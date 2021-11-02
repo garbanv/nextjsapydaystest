@@ -4,7 +4,7 @@ import ReactTooltip from "react-tooltip";
 export default function homepageSubcategory({handleCompany,subcategoryName,filteredCategory}) {
   return (
     <>
-      <h6 className="text-center sm-text py-2">{subcategoryName}</h6>
+      <h6 className="text-center sm-text py-2">{subcategoryName}({filteredCategory.length})</h6>
       <div className="homeCards px-2">
         {filteredCategory
           ? filteredCategory.map((row, index) => {

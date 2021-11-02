@@ -126,7 +126,7 @@ export default function companiesCards({data}) {
         </section>
 
         <section className="cards my-5">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="card-container">
                     {liveData?liveData.map((company,index)=>{
                         return (
