@@ -41,8 +41,7 @@ export default function CompanyCard({company,index}) {
                 {company.parentCategorySlug.split(",").map((category,index)=>{
                   return (<span className="card-middle-tag mb-1 me-1">{category}</span>)
                 })}
-          
-        
+   
         </div>{/* <!--card middle--> */}
         
         <div className="card-bottom">
@@ -54,7 +53,7 @@ export default function CompanyCard({company,index}) {
           </div>{/*  <!--card-bottom -left--> */}
           <div className="card-bottom-center">
              <span>Total Funding</span>
-            <p className="fw-bold ">${company.totalFunding? company.totalFunding : "Unknown"}</p>
+            <p className="fw-bold ">${company.totalFunding? Number(company.totalFunding).toLocaleString() : "Unknown"}</p>
             <img src="../../apilandscape_total_funding__60x45.png" alt="" class="md-icon mt-3"/>
           </div> {/* <!--card-bottom -center--> */}
           <div className="card-bottom-right">
