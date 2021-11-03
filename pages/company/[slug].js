@@ -283,7 +283,7 @@ export default function CompanyDetailsName({ data }) {
                <div className="number-of-customers d-flex flex-column align-items-center border-top border-end">
                  <p className="text-gray m-0 px-2 sm-text">Number of Customers</p>
 
-                 {numbersOfCustomers ?<h5 className="fw-bold px-2 pt-2"> {numbersOfCustomers} </h5>:<h6 className="fw-bold my-2 px-2"> Unknown </h6>}
+                 {numbersOfCustomers ?<h5 className="fw-bold px-2 pt-2"> {numbersOfCustomers} </h5>:<h6 className="fw-bold my-2 px-2"> - </h6>}
                  <img src="../../apilandscape__number_of_customers_50x60.png" alt="" className="md-icon my-1 px-2" />
 
                </div> {/* number-of-customer */}

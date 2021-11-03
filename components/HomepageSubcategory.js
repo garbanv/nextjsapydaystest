@@ -16,10 +16,8 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
                   className="landscape-card mb-3"
                   key={index}
                 >
-                  <div onClick={() => handleCompany(row)} data-tip={row.name} className="landscape-square-img-container">
-               {/*      <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" /> */}
-                   {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt="" /> : <img src={row.logo} alt="" className="align-item-start" /> }      
-                    {/* <p className="xs-text text-center">{row.name}</p> */}
+                  <div onClick={() => handleCompany(row)} data-tip={row.name} className="landscape-img">
+                   {row.logo === "" || null ? <img src={`../apidaysReplacementLogo.png`} alt="" /> : <img srcset={`${row.logo} 2x`} alt="" className="" /> }
                   </div>
                 </div>
               );

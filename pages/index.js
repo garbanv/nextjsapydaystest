@@ -1205,7 +1205,7 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
                           />
                           </div>
                           <div class="landscape-subcategory-box ">
-                          {data<=0 &&  <Loader/>}
+                            {data<=0 &&  <Loader/>}
                           <HomepageSubcategory 
                           subcategoryName="Smart Home"
                           handleCompany={handleCompany}
