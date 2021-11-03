@@ -9,6 +9,7 @@ export default function companiesCards({data}) {
     
     const newData = data.values.filter((company,index)=> company.logo !==null)
     const [loading,setLoading]=useState(false)
+    const [search,setSearch]=useState("")
     
     const [liveData,setLiveData]=useState( [] || newData);
     const [sorted,setSorted]=useState(false)
@@ -16,25 +17,28 @@ export default function companiesCards({data}) {
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
     
    
+    const handleCompanyName= ()=>{
+        if(search===""){
+     setLiveData(data.values)
+        } else {
+            const result =  data.values.filter(
+                (company, index) =>
+                company.name.toLowerCase().includes(search)
+            );
+            setLiveData(result)
+        }
+  
+        
+    }
 
    useEffect(()=>{
-    liveData.sort((a, b) => a.name > b.name && 1 || -1)
+    
     if(sorted){ 
         liveData.sort((b, a) => a.name > b.name && 1 || -1) 
     } else {
         liveData.sort((a, b) => a.name > b.name && 1 || -1)
     }
    
-
-    const handleCompanyName= ()=>{
-        const result =  data.values.filter(
-            (company, index) =>
-            company.parentCategorySlug.includes(
-                selectedCategory) &&
-            company.subcategory
-        );
-        setLiveData(result)
-    }
 
     const handleFilter = () => {
         
@@ -95,7 +99,7 @@ export default function companiesCards({data}) {
         } */
     }
     handleFilter()
-   },[selectedCategory,selectedSubcategory,sorted,liveData])
+   },[selectedCategory,selectedSubcategory,sorted])
  
 
     return (
@@ -127,9 +131,13 @@ export default function companiesCards({data}) {
                     </select>
                     </div> {/* subcategory */}
                     <div className="col-md-3">
-                    <div class="input-group">
-                    <input type="text" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
-                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04"><img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt=""  className="sm-icon"/></button>
+                    <div className="input-group">
+                    <input type="text" class="form-control" id="inputGroupFile04" 
+                    aria-describedby="inputGroupFileAddon04" aria-label="Upload" 
+                    onChange={(e)=>setSearch(e.target.value)}/>
+                    <button className="btn border" type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
+                    <img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt="" className="sm-icon"/>
+                    </button>
                     </div>
 
                     </div>{/* search */}
