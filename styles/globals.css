@@ -220,7 +220,9 @@ max-width: 185px;
   background-color:#ccc;
 }
 
-
+.apilifecycleplatformBg {
+  background-color:#f9b552;
+}
 .apilifecycleplatform {
   width:40px;
   font-size:10px;
@@ -234,6 +236,9 @@ max-width: 185px;
   background-color:#f9b552;
 }
 
+.ApiStandardsandProtocolsBg {
+  background-color:#ec774c;
+}
 .ApiStandardsandProtocols {
   width:40px;
   font-size:10px;
@@ -247,6 +252,9 @@ max-width: 185px;
   background-color:#ec774c;
 }
 
+.BackendBuildingToolsANDMBaasBg {
+  background-color:#e8511b;
+}
 .BackendBuildingToolsANDMBaas {
   width:40px;
   font-size:10px;
@@ -260,6 +268,9 @@ max-width: 185px;
   background-color:#e8511b;
 }
 
+.BusinessprocessesasanAPIAPIasaProductBg {
+  background-color:#35bad2;
+}
 .BusinessprocessesasanAPIAPIasaProduct {
   width:40px;
   font-size:10px;
@@ -271,6 +282,10 @@ max-width: 185px;
   align-items:center;
   justify-content:center;
   background-color:#35bad2;
+}
+
+.BusinessprocessesasanAPIAPIasaProductsBg {
+  background-color:#4f6eb3;
 }
 
 .BusinessprocessesasanAPIAPIasaProducts {
@@ -285,6 +300,10 @@ max-width: 185px;
   justify-content:center;
   background-color:#4f6eb3;
 }
+
+.IntegrationPlatformAsAServiceBg {
+  background-color:#2e4a98;
+}
 .IntegrationPlatformAsAService {
   width:40px;
   font-size:10px;
@@ -297,7 +316,9 @@ max-width: 185px;
   justify-content:center;
   background-color:#2e4a98;
 }
-
+.VerticalAPIAbstractionsBg {
+  background-color:#39b49d;
+}
 .VerticalAPIAbstractions {
   width:40px;
   font-size:10px;
@@ -478,7 +499,7 @@ h3 {
       color: var(--main-blue) !important;
     }
     .company-category h3 {
-      background-color:#eee;
+/*       background-color:#eee; */
       font-size: 12px;
     }
 

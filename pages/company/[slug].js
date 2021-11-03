@@ -5,6 +5,7 @@ import Image from "next/image";
 import Loader from "../../public/loader.gif";
 import { CompanyContext } from "../../context/CompanyContext";
 import Unknown from "../../components/Unknown";
+/* import { categories,subcategories } from '../../utils/categoriesAndSubcategories'; */
 export default function CompanyDetailsName({ data }) {
   const router = useRouter();
   const { slug } = router.query;
@@ -12,7 +13,7 @@ export default function CompanyDetailsName({ data }) {
   const [company,setCompany]=useContext(CompanyContext)
 
   const selectedCompany = data.values.filter((company) => company.name === slug);
-  console.log(selectedCompany[0])
+
   const {
     name,
     logo,
@@ -53,9 +54,16 @@ export default function CompanyDetailsName({ data }) {
     valuationAtIpo,
     industryGroups
   } = selectedCompany[0];
-
-/*   const top5InvestorsArray = top5Investors.split(",")
-  console.log("top5InvestorsArray",top5InvestorsArray) */
+  
+  const categories = [
+    "API Lifecycle Platform",
+    "API standards and Protocols",
+    "Backend Building Tools/MBaaS",
+    "Business processes as an API/API-as a Product",
+    "Business processes as an API/API-as a Products",
+    "Integration Platform as a Service",
+    "Vertical API Abstraction",
+  ];
 
   return (
     <Layout>
@@ -74,7 +82,16 @@ export default function CompanyDetailsName({ data }) {
              <a href={url} target="_blank">{url}</a>
            </div> {/* company url */}
            <div className="company-category">
-            <h3 className="text-center px-3 py-3 my-2">{parentCategorySlug}</h3>
+            <h3 
+            className={`text-center px-3 py-3 my-2 text-white
+            ${parentCategorySlug==="API Lifecycle Platform" && "apilifecycleplatformBg"}
+            ${parentCategorySlug==="API standards and Protocols" && "ApiStandardsandProtocolsBg"}
+            ${parentCategorySlug==="Backend Building Tools/MBaaS" && "BackendBuildingToolsANDMBaasBg"}
+            ${parentCategorySlug==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
+            ${parentCategorySlug==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
+            ${parentCategorySlug==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
+            ${parentCategorySlug==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg"}
+            `}>{parentCategorySlug}</h3>
            </div> {/* company category */}
            <div className="company-subcategory border mt-2 mb-3">
             <h3 className="text-center px-3 py-2 my-2">{subcategory}</h3>
