@@ -581,13 +581,15 @@ const VerticalAPIAbstractionsANDSmartHome = data.values.filter(
             <HomeHero />
           </section> */}
 
-          <section className="intro-text">
-          <div className="container ">
-            <h3 className="text-white text-center py-5 m-0">A comprehensive view of all stakeholders creating the programmable economy</h3>
+          <section className="intro-text py-3">
+          <div className="container hero d-flex justify-content-between  align-items-center">
+          {/* <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape.png" alt="apidays" className="home-logo align-self-start" /></Link> */}
+            <h4 className="text-white  py-2 m-0">A comprehensive view of all stakeholders creating the programmable economy</h4>
+            <span class="badge bg-light text-black">{data.values.length}</span> 
           </div>
           </section>
           
-          <section className="home-landscape">
+          <section className="home-landscape heroBg">
           <ReactTooltip backgroundColor="#04a5b6" textColor="#fff" />
             <div className="container">
               <div className="row">

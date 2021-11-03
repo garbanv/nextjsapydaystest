@@ -61,6 +61,9 @@ iframe {
   max-width: 30px;
 }
 
+.home-logo {
+  max-width:255px;
+  }
 
 a {
   text-decoration: none !important;
@@ -81,7 +84,14 @@ a {
   background-color:#f28f22;
 }
 .navbar img{
-max-width: 125px;
+max-width: 185px;
+}
+
+.navbar a {
+  text-transform: uppercase;
+  color:#0ab !important;
+  position: relative;
+  top:4px;
 }
 .sm-text {
   font-size:12px;
@@ -102,8 +112,8 @@ max-width: 125px;
 
 .landscape-card {
   /*   background-color:red; */
-    width:50px;
-    height:50x;
+    width:60px;
+    height:60x;
     padding:0 2px 2px 0;
   }
 .home-landscape,.intro-text {
@@ -157,8 +167,9 @@ max-width: 125px;
 
 
 .heroBg {
-  background-image: url('../public/homepage/apidays_home___HERO\ BACKGROUND.png');
-  background-size:cover;
+  background-image: url('../public/homepage/home_background_squares.png');
+  background-size:contain;
+  background-color: #0ab;
 }
 
 .main-box {

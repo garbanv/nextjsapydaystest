@@ -5,7 +5,7 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
   return (
     <>
       <h6 className="text-center sm-text py-2">{subcategoryName}({filteredCategory.length})</h6>
-      <div className="homeCards px-2">
+      <div className="homeCards d-flex justify-content-center px-2">
         {filteredCategory
           ? filteredCategory.map((row, index) => {
           /*   console.log("row.logo",index +'-'+row.logo) */

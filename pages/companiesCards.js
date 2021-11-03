@@ -16,8 +16,6 @@ export default function companiesCards({data}) {
     
 
 
-
-
    useEffect(()=>{
 
     if(sorted){ 
