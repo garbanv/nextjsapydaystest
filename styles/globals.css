@@ -41,17 +41,22 @@ a {
 }
 img {
   max-width:100%;
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+
+
 }
 
 .homeCards {
   display: flex;
    flex-wrap: wrap;
-   align-items: stretch;
+  
+}
+
+.homeCards img {
+
+  -webkit-backface-visibility: hidden;
+  -ms-transform: translateZ(0); /* IE 9 */
+  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+  transform: translateZ(0);
 }
 iframe {
   max-width:100%;
@@ -89,7 +94,7 @@ a {
   background-color:#f28f22;
 }
 .navbar img{
-max-width: 185px;
+
 }
 
 .navbar a {
@@ -117,9 +122,55 @@ max-width: 185px;
 
 .landscape-card {
   /*   background-color:red; */
-    width:60px;
-    height:60x;
+    width:70px;
+    height:70x;
     padding:0 2px 2px 0;
+
+    display: grid;
+    place-items: center;
+   
+
+  }
+
+/* .landscape-square-img-container {
+  width: 60px;
+  display:flex;
+
+  justify-content:center;
+    align-items:center;
+    margin-right:2px;
+}
+
+.landscape-square-img-container img {
+  display: block;
+  width: 60px;
+
+  align-self: center;
+} */
+
+  .landscape-card img {
+    image-rendering: -moz-crisp-edges;         
+    image-rendering:   -o-crisp-edges;         
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    height: auto;
+    max-width: 70;
+    
+/*     -webkit-backface-visibility: hidden;
+    -ms-transform: translateZ(0); 
+    -webkit-transform: translateZ(0); 
+    transform: translateZ(0);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;         
+    image-rendering:   -o-crisp-edges;         
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;   */
   }
 .home-landscape,.intro-text {
   background-color: #0ab;
