@@ -39,7 +39,16 @@ export default function CompanyCard({company,index}) {
           </div> {/* <!--cardtop--> */}
         <div className="card-middle mt-1">
                 {company.parentCategorySlug.split(",").map((category,index)=>{
-                  return (<span className="card-middle-tag mb-1 me-1">{category}</span>)
+                  console.log(category)
+                  return (<span className={`card-middle-tag mb-1 me-1 text-white
+                  ${category.includes("API Lifecycle Platform") && "apilifecycleplatformBg"}
+                  ${category==="API standards and Protocols" && "ApiStandardsandProtocolsBg"}
+                  ${category==="Backend Building Tools/MBaaS" && "BackendBuildingToolsANDMBaasBg"}
+                  ${category==="Business processes as an API/API-as a Product" && "BusinessprocessesasanAPIAPIasaProductBg"}
+                  ${category==="Business processes as an API/API-as a Products" && "BusinessprocessesasanAPIAPIasaProductsBg"}
+                  ${category==="Integration Platform as a Service" && "IntegrationPlatformAsAServiceBg"}
+                  ${category==="Vertical API Abstractions" && "VerticalAPIAbstractionsBg"}
+                  `}>{category}</span>)
                 })}
    
         </div>{/* <!--card middle--> */}

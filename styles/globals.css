@@ -395,7 +395,7 @@ h3 {
 }
 
 .card-middle-tag {
-  background-color: whitesmoke;
+ /*  background-color: whitesmoke; */
   padding:5px 10px;
   text-align: center;
   font-size:10px;
