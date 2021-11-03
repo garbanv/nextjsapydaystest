@@ -17,18 +17,26 @@ export default function companiesCards({data}) {
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
     
    
-    const handleCompanyName= ()=>{
-        if(search===""){
-     setLiveData(data.values)
+    const handleCompanyName= (text)=>{
+        console.log("working")
+        /* if(search===""){
+        setLiveData(data.values)
         } else {
             const result =  data.values.filter(
                 (company, index) =>
-                company.name.toLowerCase().includes(search)
+                company.name.toLowerCase().includes(text)
             );
             setLiveData(result)
-        }
-  
-        
+        } */
+
+   
+                const result =  data.values.filter(
+                    (company, index) =>
+                    company.name.toLowerCase().includes(text)
+                );
+                setLiveData(result)
+
+
     }
 
    useEffect(()=>{
@@ -134,7 +142,7 @@ export default function companiesCards({data}) {
                     <div className="input-group">
                     <input type="text" class="form-control" id="inputGroupFile04" 
                     aria-describedby="inputGroupFileAddon04" aria-label="Upload" 
-                    onChange={(e)=>setSearch(e.target.value)}/>
+                    onChange={(e)=>handleCompanyName(e.target.value)}/>
                     <button className="btn border" type="button" id="inputGroupFileAddon04" onClick={handleCompanyName}>
                     <img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt="" className="sm-icon"/>
                     </button>
