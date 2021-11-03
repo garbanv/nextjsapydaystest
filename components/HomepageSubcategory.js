@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import Loader from "./Loader";
 
 export default function homepageSubcategory({handleCompany,subcategoryName,filteredCategory}) {
   return (
@@ -24,6 +25,7 @@ export default function homepageSubcategory({handleCompany,subcategoryName,filte
               );
             })
           : "no data"}
+
       </div>
     </>
   );

@@ -63,6 +63,11 @@ iframe {
 
 .home-logo {
   max-width:255px;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
   }
 
 a {
@@ -91,7 +96,7 @@ max-width: 185px;
   text-transform: uppercase;
   color:#0ab !important;
   position: relative;
-  top:4px;
+  top:2px;
 }
 .sm-text {
   font-size:12px;
@@ -212,7 +217,98 @@ max-width: 185px;
   display:flex;
   align-items:center;
   justify-content:center;
-  background-color:#eee;
+  background-color:#ccc;
+}
+
+
+.apilifecycleplatform {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#f9b552;
+}
+
+.ApiStandardsandProtocols {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#ec774c;
+}
+
+.BackendBuildingToolsANDMBaas {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#e8511b;
+}
+
+.BusinessprocessesasanAPIAPIasaProduct {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#35bad2;
+}
+
+.BusinessprocessesasanAPIAPIasaProducts {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#4f6eb3;
+}
+.IntegrationPlatformAsAService {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#2e4a98;
+}
+
+.VerticalAPIAbstractions {
+  width:40px;
+  font-size:10px;
+  padding:10px 0;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#39b49d;
 }
 
 .landscape-container {
@@ -418,6 +514,9 @@ h3 {
   grid-template-columns:1fr 2fr;
   }
 
+  .sm-icon {
+    max-width: 25px;
+  }
   .md-icon {
     max-width: 50px;
   }

@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import CompanyCard from '../components/CompanyCard'
 
 import { categories,subcategories } from '../utils/categoriesAndSubcategories';
+import Loader from '../components/Loader';
 
 export default function companiesCards({data}) {
     
@@ -14,16 +15,26 @@ export default function companiesCards({data}) {
     const [selectedCategory,setSelectedCategory]=useState("All")
     const [selectedSubcategory,setSelectedSubcategory]=useState("All")
     
-
+   
 
    useEffect(()=>{
-
+    liveData.sort((a, b) => a.name > b.name && 1 || -1)
     if(sorted){ 
         liveData.sort((b, a) => a.name > b.name && 1 || -1) 
     } else {
         liveData.sort((a, b) => a.name > b.name && 1 || -1)
     }
    
+
+    const handleCompanyName= ()=>{
+        const result =  data.values.filter(
+            (company, index) =>
+            company.parentCategorySlug.includes(
+                selectedCategory) &&
+            company.subcategory
+        );
+        setLiveData(result)
+    }
 
     const handleFilter = () => {
         
@@ -40,8 +51,7 @@ export default function companiesCards({data}) {
             const result =  data.values.filter(
                 (company, index) =>
                 company.parentCategorySlug.includes(
-                    selectedCategory) &&
-                company.subcategory
+                    selectedCategory)
             );
             setLiveData(result)
             setLoading(false)
@@ -53,6 +63,16 @@ export default function companiesCards({data}) {
                 (company, index) =>
                 company.parentCategorySlug.includes(
                     selectedCategory) &&
+                company.subcategory.includes(selectedSubcategory)
+            );
+            setLiveData(result)
+            setLoading(false)
+        }
+
+        if (selectedCategory ==="All" && selectedSubcategory !== "All"){
+            setLoading(true)
+            const result =  data.values.filter(
+                (company, index) =>
                 company.subcategory.includes(selectedSubcategory)
             );
             setLiveData(result)
@@ -73,10 +93,6 @@ export default function companiesCards({data}) {
             console.log("la data a usar es result")
         setLiveData(result)
         } */
-        
-       console.log(sorted)
- 
-        
     }
     handleFilter()
    },[selectedCategory,selectedSubcategory,sorted,liveData])
@@ -87,7 +103,7 @@ export default function companiesCards({data}) {
         <section className="filter bg-white py-5">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-5">
+                    <div className="col-md-3">
                     <select className="form-select" ariaLabel="Default select example" onChange={e => setSelectedCategory(e.target.value)} >
                         <option selected>Select a Category</option>
                         <option value="All">All</option>
@@ -99,7 +115,7 @@ export default function companiesCards({data}) {
                         }):""}
                     </select>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-3">
                     <select className="form-select" ariaLabel="Default select example" onChange={e => setSelectedSubcategory(e.target.value)}>
                         <option >Select a subcategory</option>
                         <option value="All">All</option>
@@ -110,11 +126,18 @@ export default function companiesCards({data}) {
                         }):""}
                     </select>
                     </div> {/* subcategory */}
-                    <div className="col-md-2 d-flex justify-content-end align-items-center">
+                    <div className="col-md-3">
+                    <div class="input-group">
+                    <input type="text" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
+                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04"><img src="https://cdn-icons-png.flaticon.com/512/107/107122.png" alt=""  className="sm-icon"/></button>
+                    </div>
+
+                    </div>{/* search */}
+                    <div className="col-md-3 d-flex justify-content-end align-items-center">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value={sorted} id="flexCheckDefault" onClick={()=>setSorted(!sorted)}/>
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Sort
+                        <label class="form-check-label fw-bold" for="flexCheckDefault">
+                            A-Z
                         </label>
                         </div> {/* form check */}
                         </div> 
@@ -130,7 +153,8 @@ export default function companiesCards({data}) {
                         return (
                             <CompanyCard company={company} index={index}/>
                         )
-                    }):"Loading data..."}
+                    }):<Loader />}
+                    {liveData.length <=0 && <h3 className="fw-bold">No Data</h3>}
                 </div>
             </div>
         </section>

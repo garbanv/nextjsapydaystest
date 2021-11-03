@@ -7,7 +7,7 @@ export default function Header() {
     
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container">
-    <Link className="navbar-brand" href="/"><img src="../homepage/logo_temporary_apilandscape_dark.png" alt="" /></Link>
+    <Link className="navbar-brand" href="/"><img src="../homepage/apilanscape_temporarylogo_dark.png" alt="" /></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
